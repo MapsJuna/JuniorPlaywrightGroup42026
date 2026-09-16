@@ -5,7 +5,7 @@ export class BasePage {
         
     }
 
-    async navigateTo(url: string) { 
+    async GoToUrl(url: string) { 
         await this.page.goto(url);
     }
 
@@ -17,7 +17,7 @@ export class BasePage {
         await locator.fill(text)
     }
 
-    async verifyElementIsVisible(locator: Locator) {
+    async VerifyElementVisible(locator: Locator) {
         await expect(locator).toBeVisible()
 
     }
