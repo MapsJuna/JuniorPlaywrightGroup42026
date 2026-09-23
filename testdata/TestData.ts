@@ -1,6 +1,6 @@
 
 
-export const validUser = {
+export const validUsers = {
     admin: {
         username: 'ngwanak@gmail.com',
         password: 'Mets@cool',
