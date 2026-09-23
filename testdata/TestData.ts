@@ -2,8 +2,8 @@
 
 export const validUsers={
     admin: {
-        username: 'admin@gmail.com',
-        password: '@12345678',
+        username: 'ngwanak@gmail.com',
+        password: 'Mets@cool',
     },
     studentUser: {
         username: 'playtest@gmail.com',
