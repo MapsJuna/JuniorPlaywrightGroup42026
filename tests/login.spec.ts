@@ -20,7 +20,7 @@ test.describe('Login Tests', () => {
 
         await loginPage.GoToUrl('https://ndosisimplifiedautomation.vercel.app');
         await loginPage.navigateToLoginPage();
-        await loginPage.userLogin(validUsers.user.username,validUsers.user.password);
+        await loginPage.userLogin(validUsers.studentUser.username,validUsers.studentUser.password);
 
 
     });
