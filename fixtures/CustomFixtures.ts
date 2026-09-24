@@ -18,3 +18,4 @@ export const test = base.extend<CustomFixtures>({
         await use(new HomePage(page));
     }
 });
+

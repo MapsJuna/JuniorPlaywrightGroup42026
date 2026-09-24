@@ -12,15 +12,18 @@ test.describe('Login Tests', () => {
         await loginPage.GoToUrl('https://ndosisimplifiedautomation.vercel.app');
         await loginPage.navigateToLoginPage();
         await loginPage.userLogin(validUsers.admin.username,validUsers.admin.password);
+        await loginPage.verifyDashboardHeading();
+         
 
-       
     });
+
 
     test('User should be able to login', async ({ loginPage }) => {
 
         await loginPage.GoToUrl('https://ndosisimplifiedautomation.vercel.app');
         await loginPage.navigateToLoginPage();
         await loginPage.userLogin(validUsers.studentUser.username,validUsers.studentUser.password);
+        await loginPage.verifyDashboardHeading();
 
 
     });
