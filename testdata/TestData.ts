@@ -10,7 +10,7 @@ export const validUsers={
         password: '1234567!',
     },
 
-    githubUser: {
+    GitHubUsername: {
         username: 'MapsJuna',
         
     },

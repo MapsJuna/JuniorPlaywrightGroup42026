@@ -1,6 +1,6 @@
 
 
-import { expect } from "@playwright/test";
+
 import { test } from "../fixtures/CustomFixtures";
 import { validUsers } from "../testdata/TestData";
 
@@ -28,11 +28,18 @@ test.describe('Login Tests', () => {
 
     });
 
-    test('User should be able to edit GitUsername', async ({ HomePage }) => {
-        await HomePage.ClickMenu();
-        await HomePage.ClickMyProfile();
-        await HomePage.ClickEditProfile();
-        await HomePage.EditGitProfileName(validUsers.githubUser.username);
+    test('User should be able to edit GitUsername', async ({ homePage, loginPage }) => {
+
+        await loginPage.GoToUrl('https://ndosisimplifiedautomation.vercel.app');
+        await loginPage.navigateToLoginPage();
+        await loginPage.userLogin(validUsers.studentUser.username,validUsers.studentUser.password
+    );
+
+
+        await homePage.ClickMenu(); 
+        await homePage.ClickMyProfile();
+        await homePage.ClickEditMyProfile();
+        await homePage.EditGitProfileName(validUsers.GitHubUsername.username);
        
 
     })

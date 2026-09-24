@@ -1,18 +1,34 @@
-
+import { Page } from "@playwright/test";
 import { BasePage } from "../utils/Basepage";
 
 export class HomePage extends BasePage {
-
-    async openNdosiWebsite() {
-        await this.GoToUrl('https://ndosisimplifiedautomation.vercel.app');
+    ClickEditMyProfile() {
+        throw new Error("Method not implemented.");
     }
 
-    async navigateTOProfilePage() {
+    
+
+    async ClickMenu() {
         await this.ClickElement(this.page.getByRole('button', { name: 'Menu' }));
+    }
+
+    async ClickMyProfile() {
         await this.ClickElement(this.page.getByRole('button', { name: 'Profile' }));
-        await this.ClickElement(this.page.getByRole('button', { name: 'Edit Profile' }));
-        await this.page.getByRole('textbox').fill('MapsJuna');
+    }
+
+    async EditGitProfileName(username: string) {
+        await this.page.getByRole('textbox').fill(username);
+    }
+
+    async ClickSave() {
         await this.ClickElement(this.page.getByRole('button', { name: 'Save' }));
     }
 
+    async navigateTOProfilePage() {
+        await this.ClickMenu();
+        await this.ClickMyProfile();
+        await this.page.getByRole('button', { name: 'Edit Profile' });
+        await this.EditGitProfileName('MapsJuna');
+        await this.ClickSave();
+    }
 }
