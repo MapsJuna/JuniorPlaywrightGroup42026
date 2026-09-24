@@ -28,5 +28,14 @@ test.describe('Login Tests', () => {
 
     });
 
+    test('User should be able to edit GitUsername', async ({ HomePage }) => {
+        await HomePage.ClickMenu();
+        await HomePage.ClickMyProfile();
+        await HomePage.ClickEditProfile();
+        await HomePage.EditGitProfileName(validUsers.githubUser.username);
+       
+
+    })
+
 
 });

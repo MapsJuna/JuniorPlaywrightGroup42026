@@ -14,7 +14,7 @@ export class LoginPage extends BasePage {
     async userLogin(username: string, password: string) {
         await this.EnterText(this.page.locator('#login-email'), username);
         await this.EnterText(this.page.locator('#login-password'), password);
-        await this.ClickElement(this.page.locator('#login-submit)'));
+        await this.ClickElement(this.page.locator('#login-submit'));
     }
 
     async verifyDashboardHeading() {
