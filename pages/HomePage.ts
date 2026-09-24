@@ -2,11 +2,8 @@ import { Page } from "@playwright/test";
 import { BasePage } from "../utils/Basepage";
 
 export class HomePage extends BasePage {
-    ClickEditMyProfile() {
-        throw new Error("Method not implemented.");
-    }
-
     
+       
 
     async ClickMenu() {
         await this.ClickElement(this.page.getByRole('button', { name: 'Menu' }));
@@ -16,8 +13,14 @@ export class HomePage extends BasePage {
         await this.ClickElement(this.page.getByRole('button', { name: 'Profile' }));
     }
 
+    async ClickEditMyProfile() {
+        await this.ClickElement(this.page.getByRole('button', { name: 'Edit Profile'}));
+
+    }
+
     async EditGitProfileName(username: string) {
-        await this.page.getByRole('textbox').fill(username);
+       await this.page.getByRole('textbox', { name: 'e.g., octocat' }).fill(username);
+
     }
 
     async ClickSave() {
@@ -27,7 +30,7 @@ export class HomePage extends BasePage {
     async navigateTOProfilePage() {
         await this.ClickMenu();
         await this.ClickMyProfile();
-        await this.page.getByRole('button', { name: 'Edit Profile' });
+        await this.ClickEditMyProfile();
         await this.EditGitProfileName('MapsJuna');
         await this.ClickSave();
     }
