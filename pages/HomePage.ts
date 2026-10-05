@@ -2,6 +2,9 @@ import { Page } from "@playwright/test";
 import { BasePage } from "../utils/Basepage";
 
 export class HomePage extends BasePage {
+    verifyProfileHeading() {
+        throw new Error("Method not implemented.");
+    }
     
        
 
